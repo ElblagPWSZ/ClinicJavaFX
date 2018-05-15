@@ -7,12 +7,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="390.0" prefWidth="688.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="clinic.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="390.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinic.FXMLDocumentController">
     <children>
         <Label fx:id="label" layoutX="14.0" layoutY="14.0" minHeight="16" minWidth="69" text="Moja przychodnia">
          <font>
@@ -24,11 +26,20 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Accordion layoutX="14.0" layoutY="14.0" prefHeight="263.0" prefWidth="662.0">
+                        <Accordion fx:id="doctorsAccordion" layoutX="14.0" layoutY="14.0" prefHeight="263.0" prefWidth="662.0">
                           <panes>
-                            <TitledPane animated="false" text="Lista lekarzy">
+                            <TitledPane fx:id="doctorTitledPane" animated="false" text="Lista lekarzy">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tableView" layoutX="8.0" layoutY="6.0" prefHeight="200.0" prefWidth="423.0">
+                                            <columns>
+                                              <TableColumn prefWidth="75.0" text="Imię" />
+                                              <TableColumn prefWidth="75.0" text="Nazwisko" />
+                                                <TableColumn prefWidth="75.0" text="Specjalizacja" />
+                                            </columns>
+                                          </TableView>
+                                       </children></AnchorPane>
                               </content>
                             </TitledPane>
                             <TitledPane animated="false" text="Dodaj nowego lekarza">
